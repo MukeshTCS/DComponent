@@ -1,0 +1,54 @@
+
+  <div class="container-fluid" style="margin-top: 2px;">
+      <div class="card" style="max-width: 20rem;">
+        <div class="card-header">Criteria</div>
+        <div class="card-body">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="min-width: 140px;"  id="">Operator</span>
+            </div>
+            <!-- <input type="text" class="form-control"> -->
+            <select class="form-control" (change)="onOperatorChanged($event.target.value)" >
+              <option></option>
+              <option>AND</option>
+              <option>OR</option>
+              <option>NOT</option>
+              <option>XOP</option>
+            </select>
+          </div>
+          <div class="input-group" style="margin-top: 2px;">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="min-width: 140px;" id="">Range Operator</span>
+            </div>
+            <!-- <input type="text" class="form-control"> -->
+            <select class="form-control" (change)="onRangeOperatorChanged($event.target.value)" >
+              <option></option>
+              <option>AND</option>
+              <option>OR</option>
+              <option>NOT</option>
+              <option>XOP</option>
+            </select>
+          </div>
+          <div class="input-group" style="margin-top: 2px;">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="min-width: 140px;" id="">Field Name </span>
+            </div>
+            <!-- <input type="text" class="form-control"> -->
+            <select class="form-control"  (change)="onFieldNameChanged($event.target.value)" >
+              <option></option>
+              <option>Country</option>
+              <option>Industry</option>
+              <option>Auditing Standard</option>
+              <option>ContentType</option>
+            </select>
+          </div>
+    
+          <div class="input-group" style="margin-top: 2px;">
+              <div class="input-group-prepend"  >
+                <span class="input-group-text" style="min-width: 140px;" id="">Field Value  </span>
+              </div>
+              <input type="text" class="form-control">          
+            </div>
+        </div>
+      </div>
+    </div>

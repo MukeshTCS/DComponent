@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row" *ngFor="let criteriaDetail of CriteriaDetailList; let i=index">
+    <div>
+      <app-criteria (onFieldNameChange)=updateFieldName($event) (onOperatorChange)=updateOperatorName($event) (onRangeOperatorChange)=updateRangeOperatorName($event)
+        [criteria]="criteriaDetail.criteria"></app-criteria>
+    </div>
+    <div *ngFor="let nestCriteria of criteriaDetail.nestedCriteria">
+      <app-criteria (onFieldNameChange)=updateFieldName($event) (onOperatorChange)=updateOperatorName($event) (onRangeOperatorChange)=updateRangeOperatorName($event)
+        [criteria]="nestCriteria"></app-criteria>
+    </div>
+    <div>
+      <div style="vertical-align: bottom; display: table-cell">
+        <button type="button" (click)="addNestedCriteria(i)" class="btn btn-primary">Add nested criteria +</button>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:2px;">
+    <button type="button" (click)="addNewCriteria()" class="btn btn-primary">Add criteria +</button>
+  </div>
+
+</div>
